@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# local files to be ingnored
+.my_env
+.vscode
+
+
