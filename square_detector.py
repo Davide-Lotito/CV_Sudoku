@@ -22,7 +22,7 @@ class SquareDetector:
         N = len(rows)
         
         
-        # --------- find the squares/bounding boxes identified by the points------------
+        #  Find the squares/bounding boxes identified by the points
         self.squares = []
 
         for r in range(len(rows)-1):
@@ -37,13 +37,6 @@ class SquareDetector:
                 square = (row1[col] , row1[col+1], row2[col] , row2[col+1] )
                 self.squares.append(square)
         
-
-        # filter out squares that are too small
-        areas = [area_square(square) for square in self.squares]
-        mean_area = sum(areas)/len(areas)
-        self.squares = [square for square in self.squares if area_square(square) >= mean_area]
-        
-
 
 
 def __main__():
@@ -83,9 +76,6 @@ def __main__():
 
 
     
-
-
-
 
 
 if __name__ == "__main__":

@@ -67,6 +67,7 @@ class LineDetector:
         # TODO: fix this!
         buffer.append(self.vertical[-2])
         self.vertical = buffer
+
     
     def intersections(self):
         intersection_pts = []
