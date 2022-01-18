@@ -38,7 +38,7 @@ def __main__():
     # Crop the original image by each square/bounding box
     cropped = ImageCropper(img, squares).cropped
 
-    # Detect the digits
+   # Detect the digits
     digits = []
     for im in cropped:
         d = image_to_digit(im)    

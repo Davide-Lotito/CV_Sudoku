@@ -17,8 +17,8 @@ def detect_edges(img):
     blur_gray = cv2.GaussianBlur(gray,(kernel_size, kernel_size),0)
     
     # apply the canny filter to find edges.
-    low_threshold = 110
-    high_threshold = 160
+    low_threshold = 0
+    high_threshold = 100
     edges = cv2.Canny(blur_gray, low_threshold, high_threshold)
     return edges
 

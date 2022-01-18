@@ -18,8 +18,8 @@ class LineDetector:
         rho = 1  # distance resolution in pixels of the Hough grid
         theta = np.pi / 180  # angular resolution in radians of the Hough grid
         threshold = 15  # minimum number of votes (intersections in Hough grid cell)
-        min_line_length = 50  # minimum number of pixels making up a line
-        max_line_gap = 20  # maximum gap in pixels between connectable line segments
+        min_line_length = 43  # minimum number of pixels making up a line
+        max_line_gap = 10  # maximum gap in pixels between connectable line segments
         # Output "lines" is an array containing endpoints of detected line segments
         self.lines = cv2.HoughLinesP(edges, rho, theta, threshold, np.array([]), min_line_length, max_line_gap)
         # separate vertical lines from horizontal lines
@@ -38,6 +38,7 @@ class LineDetector:
         # consider parallel lines with similar distances to each other the same line
 
 
+        # if distance between two parallel lines is greater than this, they're different lines
         MAGIC_NUMBER = 20
 
         # horizontal
@@ -51,7 +52,8 @@ class LineDetector:
                 buffer.append(self.horizontal[i])
         
         # TODO: fix this!
-        buffer.append(self.horizontal[-2])
+        buffer.append(self.horizontal[-1])
+
         self.horizontal = buffer
                 
         # vertical
@@ -65,7 +67,7 @@ class LineDetector:
                 buffer.append(self.vertical[i])
         
         # TODO: fix this!
-        buffer.append(self.vertical[-2])
+        buffer.append(self.vertical[-1])
         self.vertical = buffer
 
     
