@@ -18,7 +18,7 @@ class SquareDetector:
         
 
         # number of columns MUST be equal to number of rows!
-        assert len(rows)==len(rows[0])
+        assert len(rows)==len(rows[0]), "number of columns MUST be equal to number of rows!"
         N = len(rows)
         
         
