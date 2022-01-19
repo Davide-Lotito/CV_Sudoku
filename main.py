@@ -7,6 +7,9 @@ from edge_detector import detect_edges
 from line_detector import LineDetector
 from square_detector import SquareDetector
 from image_cropper import ImageCropper
+import numpy as np
+from tabulate import tabulate 
+from tqdm import tqdm
 
 
 def __main__():
@@ -38,25 +41,18 @@ def __main__():
     # Crop the original image by each square/bounding box
     cropped = ImageCropper(img, squares).cropped
 
+
    # Detect the digits
     digits = []
-    for im in cropped:
+    for im in tqdm(cropped):
         d = image_to_digit(im)    
-        print(d)
         digits.append(d)
 
-    print(digits)
-
-    #Show results
-    print(f"found {len(cropped)} sudoku squares")
-
-    for crp in cropped:
-        try:
-            cv2.imshow("", crp)
-            cv2.waitKey(0) # press 0 to show next
-        except:
-           pass
-
+    # convert to an np array, reshape, transpose, convert to table and pretty-print
+    digits = np.reshape(np.asanyarray(digits), (9, 9)).transpose()
+    table = tabulate(digits, [], tablefmt="fancy_grid")
+    print(table)
+    
 
 
 if __name__ == "__main__":

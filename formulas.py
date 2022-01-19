@@ -1,4 +1,4 @@
-slope = lambda line :  (line[0][3]- line[0][1]) /  (line[0][2]-line[0][0]) 
+slope = lambda line :  (line[0][3]- line[0][1]) /   (line[0][2]-line[0][0]) 
 yintercept = lambda line : line[0][1] - slope(line)*line[0][0]
 area_square = lambda square : (square[3][1]-square[0][1])*(square[3][0]-square[0][0])
 

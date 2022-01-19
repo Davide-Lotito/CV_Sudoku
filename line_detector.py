@@ -18,7 +18,7 @@ class LineDetector:
         rho = 1  # distance resolution in pixels of the Hough grid
         theta = np.pi / 180  # angular resolution in radians of the Hough grid
         threshold = 15  # minimum number of votes (intersections in Hough grid cell)
-        min_line_length = 43  # minimum number of pixels making up a line
+        min_line_length = 60  # minimum number of pixels making up a line
         max_line_gap = 10  # maximum gap in pixels between connectable line segments
         # Output "lines" is an array containing endpoints of detected line segments
         self.lines = cv2.HoughLinesP(edges, rho, theta, threshold, np.array([]), min_line_length, max_line_gap)

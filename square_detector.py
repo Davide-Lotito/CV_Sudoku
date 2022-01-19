@@ -29,9 +29,9 @@ class SquareDetector:
             row1 = rows[r]
             row2 = rows[r+1]
 
-            print(r, rows[r])
-            print(r+1, rows[r+1])
-            print("-"*100)
+            # print(r, rows[r])
+            # print(r+1, rows[r+1])
+            # print("-"*100)
             
             for col in range( N-1 ):
                 square = (row1[col] , row1[col+1], row2[col] , row2[col+1] )
@@ -46,7 +46,6 @@ def __main__():
     import cv2
     from edge_detector import detect_edges
     from line_detector import LineDetector
-
 
     """
     Unit test.
@@ -72,7 +71,7 @@ def __main__():
     # Find the squares/bounding-boxes
     squares = SquareDetector(intersection_pts).squares
 
-    print(f"Found {len(squares)} squares.")
+    #print(f"Found {len(squares)} squares.")
 
 
     
