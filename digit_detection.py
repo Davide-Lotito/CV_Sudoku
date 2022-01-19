@@ -5,7 +5,6 @@ import pytesseract
 
 
 def image_to_digit(image):
-    #custom_config = r'--oem 3 --psm 6' # Adding custom options
 
     custom_config = r'--oem 3 --psm 6 -c tessedit_char_whitelist=0123456789' # Adding custom options
 
