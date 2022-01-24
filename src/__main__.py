@@ -1,6 +1,7 @@
 import os
 import sys
 import math
+import warnings 
 
 from digit_detection import *
 from edge_detector import detect_edges
@@ -11,9 +12,10 @@ import numpy as np
 from tabulate import tabulate 
 from tqdm import tqdm
 
-
 def __main__():
-    
+
+    warnings.filterwarnings("ignore")
+
     """
     Run the program.
     """
