@@ -1,7 +1,6 @@
 import cv2 
 import pytesseract
-
-#pytesseract.pytesseract.tesseract_cmd = r'C:\Users\user\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
+#pytesseract.pytesseract.tesseract_cmd = r'.\Tesseract-OCR\tesseract.exe'
 
 
 def image_to_digit(image):
